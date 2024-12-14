@@ -4,7 +4,9 @@ FROM python:3.9-slim
 # Cài đặt các gói cần thiết cho giao tiếp I2C và các thư viện hệ thống
 RUN apt-get update && \
     apt-get install -y \
+    i2c-tools \
     python3-smbus \
+    libi2c-dev \
     build-essential \ 
     && rm -rf /var/lib/apt/lists/*
 

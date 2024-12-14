@@ -49,6 +49,7 @@ if __name__ == "__main__":
     x2 = 0
     ha_url = "http://192.168.239.242:8123"  # URL của Home Assistant
     ha_token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiI4NDliYzAxMzE1ZjQ0NzZlYTZiOGNhZTFhMGU0NGVmMiIsImlhdCI6MTczMzk3NjEzOCwiZXhwIjoyMDQ5MzM2MTM4fQ.3ac6ZhEvdXbG2PblTW_MdVnHfOSXRdL2w3lQzGvKREw"
+
   # Token truy cập của bạn
 
     
