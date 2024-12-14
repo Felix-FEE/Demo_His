@@ -2,7 +2,7 @@ import time
 import requests
 
 
-def push_to_home_assistant(value, ha_url, ha_token):
+def push_to_home_assistant(name, value, ha_url, ha_token):
     """
     Gửi dữ liệu x1, x2 lên Home Assistant thông qua REST API.
 
@@ -12,7 +12,7 @@ def push_to_home_assistant(value, ha_url, ha_token):
     :param ha_token: Long-Lived Access Token của Home Assistant
     """
     # URL endpoint để cập nhật sensor giá trị
-    endpoint = f"{ha_url}/api/states/sensor.custom_values"
+    endpoint = f"{ha_url}/api/states/sensor.custom_values_{name}"
 
     # Header để xác thực
     headers = {
@@ -56,8 +56,8 @@ if __name__ == "__main__":
     while True:
         x1 += 1
         x2 += 1
-        push_to_home_assistant(x1, ha_url, ha_token)
-        push_to_home_assistant(x2, ha_url, ha_token)
+        push_to_home_assistant('x1', x1, ha_url, ha_token)
+        push_to_home_assistant('x2', x2, ha_url, ha_token)
         time.sleep(1)
     
 
