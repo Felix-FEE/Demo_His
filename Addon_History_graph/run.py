@@ -25,7 +25,8 @@ def push_to_home_assistant(value, ha_url, ha_token):
         "state": value,
         "attributes": {
             
-            "unit_of_measurement": "custom"
+            "unit_of_measurement": "custom",
+            'friendly_name': f'Demo His ',
         }
     }
 
