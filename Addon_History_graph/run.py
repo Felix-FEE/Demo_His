@@ -2,7 +2,7 @@ import time
 import requests
 
 
-def push_to_home_assistant(x1, x2, ha_url, ha_token):
+def push_to_home_assistant(value, ha_url, ha_token):
     """
     Gửi dữ liệu x1, x2 lên Home Assistant thông qua REST API.
 
@@ -22,10 +22,9 @@ def push_to_home_assistant(x1, x2, ha_url, ha_token):
 
     # Dữ liệu cần gửi
     data = {
-        "state": "active",
+        "state": value,
         "attributes": {
-            "x1": x1,
-            "x2": x2,
+            
             "unit_of_measurement": "custom"
         }
     }
@@ -56,7 +55,8 @@ if __name__ == "__main__":
     while True:
         x1 += 1
         x2 += 1
-        push_to_home_assistant(x1, x2, ha_url, ha_token)
+        push_to_home_assistant(x1, ha_url, ha_token)
+        push_to_home_assistant(x2, ha_url, ha_token)
         time.sleep(1)
     
 
